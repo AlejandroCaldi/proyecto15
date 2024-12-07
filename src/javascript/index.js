@@ -39,7 +39,7 @@ $("#boton_maestro").on('click', function (event) {
     
 });
 
-
+    //no hubo otra forma que verlo con chatGPT, la idea general se la pasè yo, las lineas comentadas me hubieran sido imposibles.
     $('#maestro').on("click", "td", function (event) {
         let $detalle = $("#detalle");
         let $row = $(this).closest('tr'); // Get the closest row to the clicked cell
