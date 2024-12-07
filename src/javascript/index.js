@@ -1,42 +1,80 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
+    // Array para cargar a tabla. 
     let solicitudes = [{
-        "id": 1, 
+        "id": 1,
         "nombre": "Juan",
         "apellido": "Secreto"
     }, {
-        "id": 2, 
+        "id": 2,
         "nombre": "Antonio",
         "apellido": "Pero"
     }, {
-        "id": 3, 
+        "id": 3,
         "nombre": "de la Encarnación",
         "apellido": "No tanto"
-    }];
+    }, {
+        "id": 4,
+        "nombre": "Alejandro",
+        "apellido": "Caldi"
+    }
+    ];
 
 
-    for (i = 0 ; i < solicitudes.length; i++ ) {
-        $("#maestro").append(
-            $("<li>")
-                .text(solicitudes[i].nombre + ' ' + solicitudes[i].apellido)
-                .val(solicitudes[i])
-                .attr("id", "id" + solicitudes[i].id)
-        );
+    // Evento click para que cargue el array en tabla
+$("#boton_maestro").on('click', function (event) {
+    let $maestro = $('#maestro tbody');
+
+    for (i = 0; i < solicitudes.length; i++) {
+        let $linea = $('<tr>');
+        $linea.append($('<td id="id">').text(solicitudes[i].id));
+        $linea.append($('<td id="nombre">').text(solicitudes[i].nombre));
+        $linea.append($('<td id="apellido">').text(solicitudes[i].apellido));
+        $maestro.append($linea);
     }
 
+    $("#boton_maestro").hide();
+    $("#boton_texto").show();
+    
+    
+});
 
 
-    $("li").on("click", function(event) {
+    $('#maestro').on("click", "td", function (event) {
         if ($("#detalle").is(':visible')) {
             $("#detalle").hide();
         } else {
             $("#detalle").show();
 
-            let solicitud = $(this).attr("id");
+            let solId = $(this).parent().find('td #id');
+            let solNombre = $(this).parent().find('td #nombre');
+            let solApellido = $(this).parent().find('td #apellido');
 
-            $("#id").val(solicitud);
-            $("#nombre").val("Juan"  + solicitud);
-            $("#apellido").val("Secreto" + solicitud);            
+
+            $("#id").val(solId);
+            $("#nombre").val(solNombre);
+            $("#apellido").val(solApellido);
+        }
+
+    })
+
+    $("#boton_texto").on('click', function (event) {
+        let $txt = $('#texto');
+        
+        console.log($txt.val());
+
+        if ($txt.val() == "") {
+             
+            $txt.val("Hola!");
+
+        } else {
+
+            $txt.val($txt.val() + $txt.val()); 
+
         }
         
-    })
+        
+    });
+    
 });
+

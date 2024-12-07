@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi aplicación</title>
     <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="styles/estilos.css">
 </head>
+
 <body>
-    <button id="boton">Cómeme</button>
+    <fieldset class="databox">
+        <legend> Maestro de datos</legend>
+        <button id="boton_maestro">Carga de datos Maestros</button>
+        <table id="maestro">
+            <thead>
+                <tr>
+                    <th> id </th>
+                    <th> Nombre </th>
+                    <th> Apellido </th>
+                </tr>
+            </thead>
+            <tbody>
 
-    <h1>Maestro</h1>
-    <ul id="maestro">
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset class="listbox">
+        <div id="detalle" hidden>
+            <h1>Detalle</h1>
+            <form>
+                <input type="hidden" id="id" name="id">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido">
+            </form>
+        </div>
+        <button id="boton_texto" hidden>Duplicado texto</button>
+        <textarea id="texto" name="texto"rows="4" cols="50" > </textarea>
 
-    </ul>
-    <div id="detalle" hidden>
-        <h1>Detalle</h1>
-        <form>
-            <input type="hidden" id="id" name="id">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido">
-        </form>
-    </div>
+    </fieldset>
+
     <script src="./javascript/index.js"></script>
 </body>
+
 </html>
