@@ -11,7 +11,7 @@
 
 <body>
     <fieldset class="databox">
-        <legend> Maestro de datos</legend>
+        <legend> <b> Maestro de datos</b></legend>
         <button id="boton_maestro">Carga de datos Maestros</button>
         <table id="maestro">
             <thead>
@@ -26,19 +26,22 @@
             </tbody>
         </table>
     </fieldset>
-    <fieldset class="listbox">
+    <fieldset class="detallebox">
+        <legend> <b>Detalle</b></legend>
         <div id="detalle" hidden>
-            <h1>Detalle</h1>
+
             <form>
                 <input type="hidden" id="id" name="id">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre">
+                <br>
                 <label for="apellido">Apellido:</label>
                 <input type="text" id="apellido" name="apellido">
             </form>
         </div>
+        <br>
         <button id="boton_texto" hidden>Duplicado texto</button>
-        <textarea id="texto" name="texto"rows="4" cols="50" > </textarea>
+        <textarea id="texto" name="texto" rows="4" cols="50"> </textarea>
 
     </fieldset>
 

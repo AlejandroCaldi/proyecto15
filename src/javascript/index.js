@@ -27,9 +27,9 @@ $("#boton_maestro").on('click', function (event) {
 
     for (i = 0; i < solicitudes.length; i++) {
         let $linea = $('<tr>');
-        $linea.append($('<td id="id">').text(solicitudes[i].id));
-        $linea.append($('<td id="nombre">').text(solicitudes[i].nombre));
-        $linea.append($('<td id="apellido">').text(solicitudes[i].apellido));
+        $linea.append($('<td>').text(solicitudes[i].id));
+        $linea.append($('<td>').text(solicitudes[i].nombre));
+        $linea.append($('<td>').text(solicitudes[i].apellido));
         $maestro.append($linea);
     }
 
@@ -41,27 +41,26 @@ $("#boton_maestro").on('click', function (event) {
 
 
     $('#maestro').on("click", "td", function (event) {
-        if ($("#detalle").is(':visible')) {
-            $("#detalle").hide();
+        let $detalle = $("#detalle");
+        let $row = $(this).closest('tr'); // Get the closest row to the clicked cell
+        let solId = $row.find('td').eq(0).text(); // Get the text of the first cell
+        let solNombre = $row.find('td').eq(1).text(); 
+        let solApellido = $row.find('td').eq(2).text();
+
+
+        $("#id").val(solId);
+        $("#nombre").val(solNombre);
+        $("#apellido").val(solApellido);
+
+        if ($detalle.is(':visible')) {
+            $detalle.hide();
         } else {
-            $("#detalle").show();
-
-            let solId = $(this).parent().find('td #id');
-            let solNombre = $(this).parent().find('td #nombre');
-            let solApellido = $(this).parent().find('td #apellido');
-
-
-            $("#id").val(solId);
-            $("#nombre").val(solNombre);
-            $("#apellido").val(solApellido);
+            $detalle.show();
         }
-
-    })
+    });
 
     $("#boton_texto").on('click', function (event) {
         let $txt = $('#texto');
-        
-        console.log($txt.val());
 
         if ($txt.val() == "") {
              
