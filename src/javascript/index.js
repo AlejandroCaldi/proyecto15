@@ -23,6 +23,7 @@ $(document).ready(function () {
 
     // Evento click para que cargue el array en tabla
 $("#boton_maestro").on('click', function (event) {
+    alert("Botón apretado");
     let $maestro = $('#maestro tbody');
 
     for (i = 0; i < solicitudes.length; i++) {
@@ -60,6 +61,7 @@ $("#boton_maestro").on('click', function (event) {
     });
 
     $("#boton_texto").on('click', function (event) {
+        $("#boton_resetear").show();
         let $txt = $('#texto');
 
         if ($txt.val() == "") {
@@ -72,6 +74,12 @@ $("#boton_maestro").on('click', function (event) {
 
         }
         
+        
+    });
+
+    $("#boton_resetear").on('click', function (event) {
+        let $txt = $('#texto');
+        $txt.val("");
         
     });
     

@@ -1,0 +1,36 @@
+arreglo.forEach( x => cual es ese objeto
+{
+lógica 
+}
+
+ejemplo real:
+
+
++++
+        arreglo.forEach(
+            x =>
+                $("#ol01")
+                    .append(
+                        $("<li>").text(arreglo[i])
+                    )
+        )
+ +++
+
+
+
+Tratar de mo meter código de html en el .append() también
+
+Para apreinder cuestiones básicadas de seguridad para programador. owasp tiene dos aplicacaciones de ejemplo. 
+OWAS webgoat (goat en tanto novato).
+
+descargar, loguear, testear
+
+
+El jueves a primera hora. 
+
+para ver llamadas asincronas en el inspector de navegador ir a Fetch/XHR (o ajax, rest, dependiendo del navegador)-
+
+Una vez que cargó al página por completo... ver el video en 01:40 de la clase. 
+
+
+
