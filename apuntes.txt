@@ -11,7 +11,7 @@ ejemplo real:
             x =>
                 $("#ol01")
                     .append(
-                        $("<li>").text(arreglo[i])
+                        $("<li>").text(x)
                     )
         )
  +++
